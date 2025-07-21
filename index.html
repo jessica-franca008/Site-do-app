@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>ProntosJá</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ef0301;
+      color: #000000;
+    }
+
+    .faixa-laranja {
+      display: inline-block;
+      background-color: #f7941d;
+      color: rgb(0, 0, 0);
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-white {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 40px 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 80px;
+      width: 1100px;
+    }
+
+    .centered {
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    .right {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .left {
+      margin-right: auto;
+      margin-left: 0;
+    }
+
+    .logo-nome {
+      font-size: 100px;
+      font-weight: bold;
+      color: #000000;
+      margin-top: 10px;
+      text-align: right;
+      padding-right: 55px;
+    }
+
+    .img-celular {
+      width: 250px;
+      height: auto;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .image-box {
+      flex: 1;
+      text-align: center;
+    }
+
+    .image-box img {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .imagem-menor {
+      width: 250px;
+      height: auto;
+    }
+
+    .text-box {
+      flex: 1;
+    }
+
+    .text-box h2 {
+      color: #000000;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .text-box p,
+    .text-box li {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .text-box ul {
+      padding-left: 20px;
+    }
+
+    .links a {
+      display: block;
+      margin-bottom: 10px;
+      color: #000000;
+      text-decoration: none;
+      word-wrap: break-word;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .section-white {
+        width: auto;
+        margin: 20px;
+      }
+
+      .row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- parte da logo -->
+  <div class="section-white centered">
+    <div class="row">
+      <div class="image-box">
+        <img src="https://i.postimg.cc/MHdhqsSn/Whats-App-Image-2025-07-09-at-18-30-41.jpg" alt="Logo ProntosJá" class="img-celular">
+      </div>
+      <div class="text-box">
+        <div class="logo-nome">ProntosJá</div>
+        <div class="faixa-laranja">ENTREGA RÁPIDA COM A MELHOR COMUNICAÇÃO</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- parte do que é -->
+  <div class="section-white right">
+    <div class="row">
+      <div class="image-box">
+        <img src="https://i.postimg.cc/cLJqgr4y/2025-07-18-15-13.png" alt="Imagem do aplicativo" class="imagem-menor">
+      </div>
+      <div class="text-box">
+        <h2 class="faixa-laranja">O que é o ProntosJá?</h2>
+        <p>
+          É um app de multi-serviços que permite que diversos tipos de estabelecimentos se cadastrem para oferecer entregas rápidas, como documentos, compras e pequenos volumes, com gestão simplificada e comunicação eficiente entre clientes e prestadores — tudo em uma só plataforma.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- funcionalidades -->
+  <div class="section-white left">
+    <div class="row">
+      <div class="image-box">
+        <img src="https://i.postimg.cc/XJqQyf4M/Whats-App-Image-2025-07-14-at-14-33-50.jpg" alt="Ícones das funcionalidades" class="imagem-menor">
+      </div>
+      <div class="text-box">
+        <h2 class="faixa-laranja">Nossas funcionalidades</h2>
+        <ul>
+          <li>Cadastro de Usuário (Criação de perfil com dados pessoais e de contato)</li>
+          <li>Multi-Entrega (Vários tipos de entrega no mesmo app)</li>
+          <li>Comunicação Direta (Chat com envio de mensagens)</li>
+          <li>Avaliação (Nota para a entrega)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- links -->
+  <div class="section-white centered">
+    <div class="text-box">
+      <h2 class="faixa-laranja">Deseja saber mais sobre o app?</h2>
+      <div class="links">
+        <a href="https://docs.google.com/document/d/1np3rtg2NJmFA30N5HqX1woZ2_edtoMPYk4cQtqiqhIk/edit?usp=drivesdk" target="_blank">
+          📄 Documentação Oficial
+        </a>
+        <a href="https://www.instagram.com/prontosja_/" target="_blank">
+          📱 Nosso Instagram: @prontosja_
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
