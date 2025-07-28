@@ -1,198 +1,360 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>ProntosJá</title>
-  <style>
+    <meta charset="UTF-8" />
+    <title>ProntosJá</title>
+    <style>
+    :root {
+        --bg: #ef0301;
+        font-size: 10px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        border: none;
+        text-decoration: none;
+        transition: 0.2s linear;
+        font-family: Arial, sans-serif;
+    }
+
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ef0301;
-      color: #000000;
+        background-color: white;
     }
 
-    .faixa-laranja {
-      display: inline-block;
-      background-color: #f7941d;
-      color: rgb(0, 0, 0);
-      padding: 12px 25px;
-      border-radius: 30px;
-      font-size: 16px;
-      font-weight: bold;
-      text-align: center;
-      margin-top: 10px;
-      margin-bottom: 15px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    section {
+        padding: 3rem 2rem;
+        margin: 0 auto;
+        max-width: 1200px;
     }
 
-    .section-white {
-      background-color: #ffffff;
-      border-radius: 15px;
-      padding: 40px 30px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      margin-bottom: 80px;
-      width: 1100px;
+    .header {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1200px;
+        z-index: 99;
     }
 
-    .centered {
-      margin: 40px auto;
-      text-align: center;
+    .header section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 1rem;
+        background-color: var(--bg);
+        max-width: 100%;
     }
 
-    .right {
-      margin-left: auto;
-      margin-right: 0;
+    .navbar a {
+        margin: 3rem;
+        font-size: 1.8rem;
+        color: white;
     }
 
-    .left {
-      margin-right: auto;
-      margin-left: 0;
+    .navbar a:hover {
+        color: black;
+        border-bottom: 0.1rem solid;
+        padding-bottom: 0.3rem;
+        font-size: 2.2rem;
     }
 
-    .logo-nome {
-      font-size: 100px;
-      font-weight: bold;
-      color: #000000;
-      margin-top: 10px;
-      text-align: right;
-      padding-right: 55px;
+    .espaco {
+        width: 100px;
     }
 
-    .img-celular {
-      width: 250px;
-      height: auto;
+    .button {
+        background: var(--bg);
+        color: white;
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        display: inline-block;
     }
 
-    .row {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 30px;
-      flex-wrap: wrap;
+    .button:hover {
+        letter-spacing: 0.1rem;
     }
 
-    .image-box {
-      flex: 1;
-      text-align: center;
+    .home-container {
+        background: url("https://i.postimg.cc/zfcyfWrX/Whats-App-Image-2025-07-28-at-15-23-28.jpg");
+        height: 100vh;
+        background-position: center;
+        background-size: cover;
     }
 
-    .image-box img {
-      max-width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    .home-container section {
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
     }
 
-    .imagem-menor {
-      width: 250px;
-      height: auto;
+    .content {
+        max-width: 100rem;
     }
 
-    .text-box {
-      flex: 1;
+    .content h3 {
+        color: var(--bg);
+        font-size: 6rem;
     }
 
-    .text-box h2 {
-      color: #000000;
-      font-size: 24px;
-      margin-bottom: 15px;
+    .content p {
+        color: white;
+        font-size: 2rem;
+        font-weight: 300;
+        line-height: 1.5;
+        padding: 1rem 0;
     }
 
-    .text-box p,
-    .text-box li {
-      font-size: 18px;
-      line-height: 1.6;
+    .title {
+        font-size: 4rem;
+        color: black;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 3rem;
     }
 
-    .text-box ul {
-      padding-left: 20px;
+    .about .row {
+        display: flex;
+        align-items: center;
+        background-color: #000;
+        border-radius: 20px;
+        gap: 1.5rem;
     }
 
-    .links a {
-      display: block;
-      margin-bottom: 10px;
-      color: #000000;
-      text-decoration: none;
-      word-wrap: break-word;
+    .about .row .content {
+        padding: 2rem;
     }
 
-    .links a:hover {
-      text-decoration: underline;
+    .about .row .content h3 {
+        font-size: 3rem;
+        color: white;
+    }
+
+    .about .row .content p {
+        font-size: 1.6rem;
+        color: white;
+        padding: 1rem 0;
+        line-height: 1.8;
+    }
+
+    .menu .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.5rem;
+    }
+
+    .menu .box-container .box {
+        text-align: center;
+        border: 0.1rem solid;
+        padding: 5rem;
+        background-color: var(--bg);
+    }
+
+    .menu .box-container .box h3 {
+        color: white;
+        font-size: 2rem;
+        padding: 1rem 0;
+    }
+
+    .menu .box-container .box h5 {
+        font-size: 1.8rem;
+        color: white;
+    }
+
+    .menu .box-container .box:hover h3,
+    .menu .box-container .box:hover h5 {
+        color: black;
+        font-size: 2.2rem;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    .footer .insta {
+        padding: 1rem 0;
+    }
+
+    .footer .insta svg {
+        margin: 0.3rem;
+        cursor: pointer;
+        border-radius: 50%;
+        padding: 1rem;
+    }
+
+    .footer .insta svg:hover {
+        background-color: #000;
+    }
+
+    /* === MEDIA QUERIES PARA RESPONSIVIDADE === */
+
+    @media (max-width: 992px) {
+        .header {
+            width: 100%; /* largura total da tela */
+            left: 0;
+            transform: none;
+            padding: 0 1rem;
+        }
+
+        .header section {
+            padding: 1.5rem 1rem;
+        }
+
+        .navbar a {
+            margin: 1.5rem;
+            font-size: 1.6rem;
+        }
+
+        .content h3 {
+            font-size: 4rem;
+        }
+
+        .content p {
+            font-size: 1.6rem;
+        }
+
+        .about .row {
+            flex-wrap: wrap;
+        }
     }
 
     @media (max-width: 768px) {
-      .section-white {
-        width: auto;
-        margin: 20px;
-      }
+        .navbar {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-      .row {
-        flex-direction: column;
-      }
+        .navbar a {
+            margin: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .about .row {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .about .row .content {
+            padding: 1rem;
+        }
+
+        .content h3 {
+            font-size: 3rem;
+        }
+
+        .content p {
+            font-size: 1.4rem;
+        }
+
+        .menu .box-container {
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            padding: 0 1rem;
+        }
+
+        .menu .box-container .box {
+            padding: 3rem 1rem;
+        }
     }
-  </style>
+
+    @media (max-width: 480px) {
+        .navbar {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar a {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .content h3 {
+            font-size: 2rem;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+        }
+
+        .menu .box-container {
+            grid-template-columns: 1fr;
+            padding: 0 1rem;
+        }
+
+        .menu .box-container .box {
+            padding: 2rem 1rem;
+        }
+    }
+    </style>
 </head>
 <body>
+    <header class="header">
+        <section>
+            <a href="#" class="logo">
+                <img src="https://i.postimg.cc/05HVqX3L/Whats-App-Image-2025-07-28-at-15-28-01.jpg" alt="logo" height="75" />
+            </a>
+            <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#about">Sobre</a>
+                <a href="#menu">Funcionalidades</a>
+                <a href="https://www.instagram.com/prontosja_/" target="_blank">Instagram</a>
+            </nav>
+            <div class="espaco"></div>
+        </section>
+    </header>
 
-  <!-- parte da logo -->
-  <div class="section-white centered">
-    <div class="row">
-      <div class="image-box">
-        <img src="https://i.postimg.cc/MHdhqsSn/Whats-App-Image-2025-07-09-at-18-30-41.jpg" alt="Logo ProntosJá" class="img-celular">
-      </div>
-      <div class="text-box">
-        <div class="logo-nome">ProntosJá</div>
-        <div class="faixa-laranja">ENTREGA RÁPIDA COM A MELHOR COMUNICAÇÃO</div>
-      </div>
+    <div class="home-container">
+        <section id="home">
+            <div class="content">
+                <h3>O Melhor App para Serviço de Delivery</h3>
+                <p><strong>É um app de multi-serviços que permite que diversos tipos de estabelecimentos se cadastrem para oferecer entregas rápidas, como documentos, compras e pequenos volumes, com gestão simplificada e comunicação eficiente entre clientes e prestadores — tudo em uma só plataforma.</strong></p>
+            </div>
+        </section>
     </div>
-  </div>
 
-  <!-- parte do que é -->
-  <div class="section-white right">
-    <div class="row">
-      <div class="image-box">
-        <img src="https://i.postimg.cc/cLJqgr4y/2025-07-18-15-13.png" alt="Imagem do aplicativo" class="imagem-menor">
-      </div>
-      <div class="text-box">
-        <h2 class="faixa-laranja">O que é o ProntosJá?</h2>
-        <p>
-          É um app de multi-serviços que permite que diversos tipos de estabelecimentos se cadastrem para oferecer entregas rápidas, como documentos, compras e pequenos volumes, com gestão simplificada e comunicação eficiente entre clientes e prestadores — tudo em uma só plataforma.
-        </p>
-      </div>
-    </div>
-  </div>
+    <section class="about" id="about">
+        <h2 class="title">Sobre nós</h2>
+        <div class="row">
+            <img src="https://i.postimg.cc/XJqQyf4M/Whats-App-Image-2025-07-14-at-14-33-50.jpg" alt="sobre-nos" height="400" width="300" />
+            <div class="content">
+                <h3>O que faz nosso app especial</h3>
+                <p>No ProntosJá, cada detalhe foi pensado para facilitar a vida de quem precisa enviar ou receber algo com agilidade e segurança. Você faz tudo em poucos toques. A plataforma oferece suporte rápido, histórico completo de pedidos e uma navegação simples — ideal para quem valoriza praticidade no dia a dia.</p>
+                <a href="#" class="button">saiba mais</a>
+            </div>
+        </div>
+    </section>
 
-  <!-- funcionalidades -->
-  <div class="section-white left">
-    <div class="row">
-      <div class="image-box">
-        <img src="https://i.postimg.cc/XJqQyf4M/Whats-App-Image-2025-07-14-at-14-33-50.jpg" alt="Ícones das funcionalidades" class="imagem-menor">
-      </div>
-      <div class="text-box">
-        <h2 class="faixa-laranja">Nossas funcionalidades</h2>
-        <ul>
-          <li>Cadastro de Usuário (Criação de perfil com dados pessoais e de contato)</li>
-          <li>Multi-Entrega (Vários tipos de entrega no mesmo app)</li>
-          <li>Comunicação Direta (Chat com envio de mensagens)</li>
-          <li>Avaliação (Nota para a entrega)</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- links -->
-  <div class="section-white centered">
-    <div class="text-box">
-      <h2 class="faixa-laranja">Deseja saber mais sobre o app?</h2>
-      <div class="links">
-        <a href="https://docs.google.com/document/d/1np3rtg2NJmFA30N5HqX1woZ2_edtoMPYk4cQtqiqhIk/edit?usp=drivesdk" target="_blank">
-          📄 Documentação Oficial
-        </a>
-        <a href="https://www.instagram.com/prontosja_/" target="_blank">
-          📱 Nosso Instagram: @prontosja_
-        </a>
-      </div>
-    </div>
-  </div>
-
+    <section class="menu" id="menu">
+        <h2 class="title">Nossas funcionalidades</h2>
+        <div class="box-container">
+            <div class="box">
+                <h3>Cadastro de Usuário</h3>
+                <h5>Criação de perfil com dados pessoais e de contato</h5>
+            </div>
+            <div class="box">
+                <h3>Multi-Entrega</h3>
+                <h5>Vários tipos de entrega no mesmo app</h5>
+            </div>
+            <div class="box">
+                <h3>Avaliação</h3>
+                <h5>Nota sobre o serviço</h5>
+            </div>
+            <div class="box">
+                <h3>Comunicação Direta</h3>
+                <h5>Chat com envio de mensagens</h5>
+            </div>
+            <div class="box">
+                <h3>Histórico de Pedidos</h3>
+                <h5>Mostra todos os serviços feitos para um cliente.</h5>
+            </div>
+            <div class="box">
+                <h3>Registro de entregas para controle e recompra</h3>
+                <h5>Lista tudo o que já foi feito no veículo.</h5>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
+
+
