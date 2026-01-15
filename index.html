@@ -1,355 +1,552 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <title>ProntosJá</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProntosJá - Delivery Multi-serviços</title>
+    
     <style>
-    :root {
-        --bg: #ef0301;
-        font-size: 10px;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        border: none;
-        text-decoration: none;
-        transition: 0.2s linear;
-        font-family: Arial, sans-serif;
-    }
-
-    body {
-        background-color: white;
-    }
-
-    section {
-        padding: 3rem 2rem;
-        margin: 0 auto;
-        max-width: 1200px;
-    }
-
-    .header {
-        position: fixed;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 1200px;
-        z-index: 99;
-    }
-
-    .header section {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 2rem 1rem;
-        background-color: var(--bg);
-        max-width: 100%;
-    }
-
-    .navbar a {
-        margin: 3rem;
-        font-size: 1.8rem;
-        color: white;
-    }
-
-    .navbar a:hover {
-        color: black;
-        border-bottom: 0.1rem solid;
-        padding-bottom: 0.3rem;
-        font-size: 2.2rem;
-    }
-
-    .espaco {
-        width: 100px;
-    }
-
-    .button {
-        background: var(--bg);
-        color: white;
-        padding: 1rem 3rem;
-        font-size: 1.2rem;
-        cursor: pointer;
-        margin-top: 1rem;
-        display: inline-block;
-    }
-
-    .button:hover {
-        letter-spacing: 0.1rem;
-    }
-
-    .home-container {
-        background: url("https://i.postimg.cc/zfcyfWrX/Whats-App-Image-2025-07-28-at-15-23-28.jpg");
-        height: 100vh;
-        background-position: center;
-        background-size: cover;
-    }
-
-    .home-container section {
-        display: flex;
-        align-items: center;
-        min-height: 100vh;
-    }
-
-    .content {
-        max-width: 100rem;
-    }
-
-    .content h3 {
-        color: var(--bg);
-        font-size: 6rem;
-    }
-
-    .content p {
-        color: white;
-        font-size: 2rem;
-        font-weight: 300;
-        line-height: 1.5;
-        padding: 1rem 0;
-    }
-
-    .title {
-        font-size: 4rem;
-        color: black;
-        text-align: center;
-        text-transform: uppercase;
-        margin-bottom: 3rem;
-    }
-
-    .about .row {
-        display: flex;
-        align-items: center;
-        background-color: #000;
-        border-radius: 20px;
-        gap: 1.5rem;
-    }
-
-    .about .row .content {
-        padding: 2rem;
-    }
-
-    .about .row .content h3 {
-        font-size: 3rem;
-        color: white;
-    }
-
-    .about .row .content p {
-        font-size: 1.6rem;
-        color: white;
-        padding: 1rem 0;
-        line-height: 1.8;
-    }
-
-    .menu .box-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-        gap: 1.5rem;
-    }
-
-    .menu .box-container .box {
-        text-align: center;
-        border: 0.1rem solid;
-        padding: 5rem;
-        background-color: var(--bg);
-    }
-
-    .menu .box-container .box h3 {
-        color: white;
-        font-size: 2rem;
-        padding: 1rem 0;
-    }
-
-    .menu .box-container .box h5 {
-        font-size: 1.8rem;
-        color: white;
-    }
-
-    .menu .box-container .box:hover h3,
-    .menu .box-container .box:hover h5 {
-        color: black;
-        font-size: 2.2rem;
-    }
-
-    .footer {
-        text-align: center;
-    }
-
-    .footer .insta {
-        padding: 1rem 0;
-    }
-
-    .footer .insta svg {
-        margin: 0.3rem;
-        cursor: pointer;
-        border-radius: 50%;
-        padding: 1rem;
-    }
-
-    .footer .insta svg:hover {
-        background-color: #000;
-    }
-
-    @media (max-width: 992px) {
-        .header {
-            width: 100%; /* largura total da tela */
-            left: 0;
-            transform: none;
-            padding: 0 1rem;
+        /* Configurações iniciais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
-
-        .header section {
-            padding: 1.5rem 1rem;
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
         }
-
-        .navbar a {
-            margin: 1.5rem;
-            font-size: 1.6rem;
+        
+        :root {
+            --vermelho: #e63946;
+            --vermelho-escuro: #c1121f;
+            --preto: #1d1d1d;
+            --branco: #ffffff;
+            --cinza: #f5f5f5;
+            --cinza-escuro: #666;
         }
-
-        .content h3 {
-            font-size: 4rem;
+        
+        /* Cabeçalho e navegação */
+        header {
+            background-color: var(--vermelho);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
-        .content p {
-            font-size: 1.6rem;
+        
+        .container-header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
         }
-
-        .about .row {
-            flex-wrap: wrap;
+        
+        .logo {
+            height: 50px;
+            width: auto;
         }
-    }
-
-    @media (max-width: 768px) {
-        .navbar {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .navbar a {
-            margin: 1rem;
-            font-size: 1.4rem;
-        }
-
-        .about .row {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .about .row .content {
-            padding: 1rem;
-        }
-
-        .content h3 {
-            font-size: 3rem;
-        }
-
-        .content p {
-            font-size: 1.4rem;
-        }
-
-        .menu .box-container {
-            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-            padding: 0 1rem;
-        }
-
-        .menu .box-container .box {
-            padding: 3rem 1rem;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .navbar {
-            flex-direction: column;
+        
+        .menu-desktop {
+            display: flex;
+            gap: 30px;
             align-items: center;
         }
-
-        .navbar a {
-            margin: 0.5rem 0;
-            font-size: 1.2rem;
+        
+        .menu-desktop a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 5px 0;
+            position: relative;
+            transition: color 0.3s;
         }
-
-        .content h3 {
-            font-size: 2rem;
+        
+        .menu-desktop a:hover {
+            color: var(--preto);
         }
-
-        .content p {
-            font-size: 1.2rem;
+        
+        .menu-desktop a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--preto);
+            transition: width 0.3s;
         }
-
-        .menu .box-container {
-            grid-template-columns: 1fr;
-            padding: 0 1rem;
+        
+        .menu-desktop a:hover::after {
+            width: 100%;
         }
-
-        .menu .box-container .box {
-            padding: 2rem 1rem;
+        
+        .menu-mobile-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
         }
-    }
+        
+        .menu-mobile-btn span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--branco);
+            margin: 3px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        
+        .menu-mobile {
+            display: none;
+            background-color: var(--vermelho);
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+        
+        .menu-mobile.active {
+            display: flex;
+        }
+        
+        .menu-mobile a {
+            color: var(--branco);
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Seção hero (banner principal) */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            color: var(--branco);
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--vermelho);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--vermelho);
+            color: var(--branco);
+            padding: 12px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s;
+            border: 2px solid var(--vermelho);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--vermelho);
+            transform: translateY(-3px);
+        }
+        
+        /* Seções comuns */
+        section {
+            padding: 80px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .titulo-section {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: var(--preto);
+            position: relative;
+        }
+        
+        .titulo-section::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--vermelho);
+        }
+        
+        /* Seção sobre */
+        .sobre {
+            background-color: var(--cinza);
+        }
+        
+        .sobre-conteudo {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background-color: var(--preto);
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 0;
+        }
+        
+        .sobre-imagem {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .sobre-imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .sobre-texto {
+            flex: 1;
+            padding: 40px;
+            color: var(--branco);
+        }
+        
+        .sobre-texto h3 {
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: var(--branco);
+        }
+        
+        .sobre-texto p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #ddd;
+        }
+        
+        /* Seção funcionalidades */
+        .funcionalidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .funcionalidade-card {
+            background-color: var(--vermelho);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            color: var(--branco);
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .funcionalidade-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            background-color: var(--vermelho-escuro);
+        }
+        
+        .funcionalidade-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .funcionalidade-card p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .sobre-conteudo {
+                flex-direction: column;
+            }
+            
+            .sobre-imagem {
+                width: 100%;
+            }
+            
+            .sobre-texto {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-desktop {
+                display: none;
+            }
+            
+            .menu-mobile-btn {
+                display: flex;
+            }
+            
+            .hero {
+                background-attachment: scroll;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .titulo-section {
+                font-size: 30px;
+            }
+            
+            .funcionalidades-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .funcionalidade-card {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .sobre-texto h3 {
+                font-size: 26px;
+            }
+            
+            .sobre-texto p {
+                font-size: 15px;
+            }
+            
+            .titulo-section {
+                font-size: 26px;
+            }
+        }
+        
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
     </style>
 </head>
 <body>
-    <header class="header">
-        <section>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container-header">
             <a href="#" class="logo">
-                <img src="https://i.postimg.cc/05HVqX3L/Whats-App-Image-2025-07-28-at-15-28-01.jpg" alt="logo" height="75" />
+                <img src="https://i.postimg.cc/05HVqX3L/Whats-App-Image-2025-07-28-at-15-28-01.jpg" alt="ProntosJá Logo" class="logo">
             </a>
-            <nav class="navbar">
-                <a href="#home">Home</a>
-                <a href="#about">Sobre</a>
-                <a href="#menu">Funcionalidades</a>
+            
+            <!-- Menu desktop -->
+            <nav class="menu-desktop">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#funcionalidades">Funcionalidades</a>
                 <a href="https://www.instagram.com/prontosja_/" target="_blank">Instagram</a>
+                <a href="https://aplicativo-prontoja.web.app" target="_blank">Teste Agora</a>
             </nav>
-            <div class="espaco"></div>
-        </section>
+            
+            <!-- Botão menu mobile -->
+            <div class="menu-mobile-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <!-- Menu mobile -->
+        <nav class="menu-mobile" id="menuMobile">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#funcionalidades">Funcionalidades</a>
+            <a href="https://www.instagram.com/prontosja_/" target="_blank">Instagram</a>
+            <a href="https://aplicativo-prontoja.web.app" target="_blank">Teste Agora</a>
+        </nav>
     </header>
 
-    <div class="home-container">
-        <section id="home">
-            <div class="content">
-                <h3>O Melhor App para Serviço de Delivery</h3>
-                <p><strong>É um app de multi-serviços que permite que diversos tipos de estabelecimentos se cadastrem para oferecer entregas rápidas, como documentos, compras e pequenos volumes, com gestão simplificada e comunicação eficiente entre clientes e prestadores — tudo em uma só plataforma.</strong></p>
-            </div>
-        </section>
-    </div>
+    <!-- Seção Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-content fade-in">
+            <h1>O Melhor App para Serviço de Delivery</h1>
+            <p>
+                <strong>É um app de multi-serviços que permite que diversos tipos de estabelecimentos se cadastrem para oferecer entregas rápidas, como documentos, compras e pequenos volumes, com gestão simplificada e comunicação eficiente entre clientes e prestadores — tudo em uma só plataforma.</strong>
+            </p>
+            <a href="#sobre" class="btn">Conheça Mais</a>
+        </div>
+    </section>
 
-    <section class="about" id="about">
-        <h2 class="title">Sobre nós</h2>
-        <div class="row">
-            <img src="https://i.postimg.cc/XJqQyf4M/Whats-App-Image-2025-07-14-at-14-33-50.jpg" alt="sobre-nos" height="400" width="300" />
-            <div class="content">
-                <h3>O que faz nosso app especial</h3>
-                <p>No ProntosJá, cada detalhe foi pensado para facilitar a vida de quem precisa enviar ou receber algo com agilidade e segurança. Você faz tudo em poucos toques. A plataforma oferece suporte rápido, histórico completo de pedidos e uma navegação simples — ideal para quem valoriza praticidade no dia a dia.</p>
+    <!-- Seção Sobre -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <h2 class="titulo-section">Sobre Nós</h2>
+            <div class="sobre-conteudo">
+                <div class="sobre-imagem">
+                    <img src="https://i.postimg.cc/XJqQyf4M/Whats-App-Image-2025-07-14-at-14-33-50.jpg" alt="Equipe ProntosJá">
+                </div>
+                <div class="sobre-texto">
+                    <h3>O Que Faz Nosso App Especial</h3>
+                    <p>
+                        No ProntosJá, cada detalhe foi pensado para facilitar a vida de quem precisa enviar ou receber algo com agilidade e segurança. Você faz tudo em poucos toques. A plataforma oferece suporte rápido, histórico completo de pedidos e uma navegação simples — ideal para quem valoriza praticidade no dia a dia.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="menu" id="menu">
-        <h2 class="title">Nossas funcionalidades</h2>
-        <div class="box-container">
-            <div class="box">
-                <h3>Cadastro de Usuário</h3>
-                <h5>Criação de perfil com dados pessoais e de contato.</h5>
-            </div>
-            <div class="box">
-                <h3>Multi-Entrega</h3>
-                <h5>Vários tipos de entrega no mesmo app.</h5>
-            </div>
-            <div class="box">
-                <h3>Avaliação</h3>
-                <h5>Nota sobre o serviço.</h5>
-            </div>
-            <div class="box">
-                <h3>Comunicação Direta</h3>
-                <h5>Chat com envio de mensagens e áudios.</h5>
-            </div>
-            <div class="box">
-                <h3>Histórico de Pedidos</h3>
-                <h5>Mostra todos os serviços feitos para um cliente.</h5>
-            </div>
-            <div class="box">
-                <h3>Interface Intuitiva</h3>
-                <h5>Design simples que qualquer pessoa consegue usar sem dificuldade.</h5>
+    <!-- Seção Funcionalidades -->
+    <section id="funcionalidades">
+        <div class="container">
+            <h2 class="titulo-section">Nossas Funcionalidades</h2>
+            <div class="funcionalidades-grid">
+                <div class="funcionalidade-card fade-in">
+                    <h3>Cadastro de Usuário</h3>
+                    <p>Criação de perfil com dados pessoais e de contato</p>
+                </div>
+                
+                <div class="funcionalidade-card fade-in">
+                    <h3>Multi-Entrega</h3>
+                    <p>Vários tipos de entrega no mesmo app</p>
+                </div>
+                
+                <div class="funcionalidade-card fade-in">
+                    <h3>Sistema de Avaliação</h3>
+                    <p>Avaliação e feedback sobre os serviços prestados</p>
+                </div>
+                
+                <div class="funcionalidade-card fade-in">
+                    <h3>Comunicação Direta</h3>
+                    <p>Chat integrado para comunicação em tempo real</p>
+                </div>
+                
+                <div class="funcionalidade-card fade-in">
+                    <h3>Histórico de Pedidos</h3>
+                    <p>Registro completo de todos os serviços realizados</p>
+                </div>
+                
+                <div class="funcionalidade-card fade-in">
+                    <h3>Interface Intuitiva</h3>
+                    <p>Design simples e acessível para todos os públicos</p>
+                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        // Controle do menu mobile
+        const menuBtn = document.getElementById('menuBtn');
+        const menuMobile = document.getElementById('menuMobile');
+        const menuSpans = menuBtn.querySelectorAll('span');
+        
+        menuBtn.addEventListener('click', function() {
+            menuMobile.classList.toggle('active');
+            
+            // Animação do botão hamburguer para X
+            if (menuMobile.classList.contains('active')) {
+                menuSpans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                menuSpans[1].style.opacity = '0';
+                menuSpans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                menuSpans[0].style.transform = 'none';
+                menuSpans[1].style.opacity = '1';
+                menuSpans[2].style.transform = 'none';
+            }
+        });
+        
+        // Fechar menu ao clicar em um link
+        const menuLinks = document.querySelectorAll('.menu-mobile a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuMobile.classList.remove('active');
+                menuSpans[0].style.transform = 'none';
+                menuSpans[1].style.opacity = '1';
+                menuSpans[2].style.transform = 'none';
+            });
+        });
+        
+        // Scroll suave para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#') return;
+                
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animação ao rolar a página
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observar elementos para animação
+        document.querySelectorAll('.funcionalidade-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
